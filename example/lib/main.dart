@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter++;
+      _counter = NativeAdd.add(_counter, 1);
     });
   }
 
@@ -98,9 +98,6 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.display1,
-            ),
-            Text(
-              "${NativeAdd.add(1, 2)}",
             ),
           ],
         ),
