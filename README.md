@@ -2,9 +2,12 @@
 
 The example can be run on android/ios.
 
-```bash
-cd example
-flutter run
-```
+[The offical document.](https://flutter.dev/docs/development/platform-integration/c-interop)
 
-The `_counter` add action come from native_add of cpp.
+## Items
+
+- have_src: Project with source code.
+
+## LICENSE
+
+MIT
