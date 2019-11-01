@@ -6,7 +6,7 @@ The example can be run on android/ios.
 
 ## Items
 
-- have_src: Project with source code.
+- have_src: An example of a project with cpp source code.
 
 ## LICENSE
 
