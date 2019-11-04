@@ -41,3 +41,5 @@ flutter run
 [ios-cmake](https://github.com/leetal/ios-cmake)
 
 [build with framework](https://blog.csdn.net/zhaowd2001/article/details/89925284)
+
+[without codesign build](https://stackoverflow.com/a/11647504/8749268)
