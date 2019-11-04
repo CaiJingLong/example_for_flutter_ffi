@@ -16,10 +16,14 @@ class NativeAdd {
   }
 }
 
-final DynamicLibrary nativeAddLib = Platform.isAndroid
+final DynamicLibrary dylib = Platform.isAndroid
     ? DynamicLibrary.open("libnative_add.so")
     : DynamicLibrary.open("native_add.framework/native_add");
 
-final int Function(int x, int y) nativeAdd = nativeAddLib
+final int Function(int x, int y) nativeAdd = dylib
     .lookup<NativeFunction<Int32 Function(Int32, Int32)>>("native_add")
+    .asFunction();
+
+final double Function(double, double) doubleAdd = dylib
+    .lookup<NativeFunction<Double Function(Double, Double)>>("double_add")
     .asFunction();

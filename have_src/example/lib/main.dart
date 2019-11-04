@@ -99,6 +99,8 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
+            Text(
+                "native double value = ${doubleAdd(_counter.toDouble(), _counter.toDouble())}"),
           ],
         ),
       ),
