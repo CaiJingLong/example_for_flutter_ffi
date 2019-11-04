@@ -17,3 +17,7 @@ ABI=$SIMU sh cmd/ios_abi_build.sh
 cd build/output
 cp -rf $DEVICE fat
 lipo -create $DEVICE/Release/some.framework/some $SIMU/Release/some.framework/some -output fat/Release/some.framework/some
+
+cd ../..
+
+cp -rf build/output/fat/Release/some.framework ../../ios
