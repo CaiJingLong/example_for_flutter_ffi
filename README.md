@@ -12,7 +12,7 @@ The example can be run on android/ios.
 
 ### Working project
 
-- no_src_library: No cpp source project.
+- flutter_no_cpp_src: Simulate a project with only libraries and no source code.
 
 ## LICENSE
 

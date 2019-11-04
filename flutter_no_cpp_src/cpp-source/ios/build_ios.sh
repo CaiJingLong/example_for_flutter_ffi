@@ -8,19 +8,12 @@ cmake --build . --config Release --target install
 
 cd ..
 
-ABIS=("iphonesimulator12.2" "iphoneos12.2")
-for abi in $ABIS;
-do
-ABI=$abi sh cmd/ios_abi_build.sh
-done
+DEVICE=$(xcodebuild -showsdks|grep "iphoneos"| awk '{print $4}')
+ABI=$DEVICE sh cmd/ios_abi_build.sh
 
-# cd build/output
+SIMU=$(xcodebuild -showsdks|grep "iphonesimulator"| awk '{print $6}')
+ABI=$SIMU sh cmd/ios_abi_build.sh
 
-# mkdir fat
-
-# mkdir fat-lib
-# lipo -create -output fat-lib/libsome.a Release-iphoneos/libsome.a Release-iphonesimulator/libsome.a
-
-# export TARGET=../../../ios
-# cp fat-lib/libsome.a $TARGET/lib
-# cp ../../src/*.h $TARGET/Classes
+cd build/output
+cp -rf $DEVICE fat
+lipo -create $DEVICE/Release/some.framework/some $SIMU/Release/some.framework/some -output fat/Release/some.framework/some
